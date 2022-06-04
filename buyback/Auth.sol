@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity =0.8.4;
 
 abstract contract Auth {
@@ -64,4 +65,3 @@ abstract contract Auth {
 
     event OwnershipTransferred(address owner);
 }
-

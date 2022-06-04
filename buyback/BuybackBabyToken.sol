@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity =0.8.4;
 
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
@@ -370,11 +371,11 @@ contract BuybackBabyToken is IERC20Extended, Auth, BaseToken {
             totalBNBFee
         );
 
-        try distributor.deposit{ value: amountBNBReflection }() {} catch {}
+        try distributor.deposit{value: amountBNBReflection}() {} catch {}
         payable(marketingFeeReceiver).transfer(amountBNBMarketing);
 
         if (amountToLiquify > 0) {
-            router.addLiquidityETH{ value: amountBNBLiquidity }(
+            router.addLiquidityETH{value: amountBNBLiquidity}(
                 address(this),
                 amountToLiquify,
                 0,
